@@ -1,20 +1,26 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
- * colors (only after it's been drawn, of course).
+ * This image represents a picture of Santa delivering presents. 
+ * He has delivered three gifts under the Christmas tree.  
  *
- * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * @author  Andrew Parvaneh 
+ * @version 2024.09.10
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square trunk;
+    private Square gift1;
+    private Square gift2;
+    private Square gift3;
+    private Triangle tree;
+    private Triangle star;
+    private Triangle hat;
+    private Circle ornament1;
+    private Circle ornament2;
+    private Circle ornament3;
+    private Circle ornament4;
+    private Circle ornament5;
+    private Person santa;
     private boolean drawn;
 
     /**
@@ -22,10 +28,19 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
+        trunk = new Square();
+        gift1 = new Square();
+        gift2 = new Square();
+        gift3 = new Square();
+        tree = new Triangle();
+        star = new Triangle();
+        hat = new Triangle();
+        ornament1 = new Circle();
+        ornament2 = new Circle();
+        ornament3 = new Circle();
+        ornament4 = new Circle();
+        ornament5 = new Circle();
+        santa = new Person();
         drawn = false;
     }
 
@@ -35,27 +50,82 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
+            trunk.changeColor("brown");
+            trunk.moveHorizontal(-140);
+            trunk.moveVertical(60);
+            trunk.changeSize(25);
+            trunk.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
+            gift1.changeColor("red");
+            gift1.moveHorizontal(-100);
+            gift1.moveVertical(80);
+            gift1.changeSize(15);
+            gift1.makeVisible();
+            
+            gift2.changeColor("yellow");
+            gift2.moveHorizontal(-165);
+            gift2.moveVertical(80);
+            gift2.changeSize(20);
+            gift2.makeVisible();
+            
+            gift3.changeColor("blue");
+            gift3.moveHorizontal(-130);
+            gift3.moveVertical(100);
+            gift3.changeSize(17);
+            gift3.makeVisible();
+            
+            tree.changeColor("green");
+            tree.moveHorizontal(-28);
+            tree.moveVertical(-40);
+            tree.changeSize(80, 100);
+            tree.makeVisible();
+            
+            ornament1.changeColor("red");
+            ornament1.moveHorizontal(-75);
+            ornament1.moveVertical(70);
+            ornament1.changeSize(10);
+            ornament1.makeVisible();
+            
+            ornament2.changeColor("yellow");
+            ornament2.moveHorizontal(-65);
+            ornament2.moveVertical(40);
+            ornament2.changeSize(10);
+            ornament2.makeVisible();
+            
+            ornament3.changeColor("red");
+            ornament3.moveHorizontal(-25);
+            ornament3.moveVertical(70);
+            ornament3.changeSize(10);
+            ornament3.makeVisible();
+            
+            ornament4.changeColor("blue");
+            ornament4.moveHorizontal(-50);
+            ornament4.moveVertical(70);
+            ornament4.changeSize(10);
+            ornament4.makeVisible();
+            
+            ornament5.changeColor("blue");
+            ornament5.moveHorizontal(-40);
+            ornament5.moveVertical(40);
+            ornament5.changeSize(10);
+            ornament5.makeVisible();
+            
+            star.changeColor("yellow");
+            star.moveHorizontal(-28);
+            star.moveVertical(-42);
+            star.changeSize(10, 30);
+            star.makeVisible();
+            
+            santa.changeColor("black");
+            santa.changeSize(60,30);
+            santa.makeVisible();
+            
+            hat.changeColor("red");
+            hat.moveHorizontal(68);
+            hat.moveVertical(17);
+            hat.changeSize(20, 30);
+            hat.makeVisible();
+            
             drawn = true;
         }
     }
@@ -65,10 +135,19 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        trunk.changeColor("black");
+        gift1.changeColor("black");
+        gift2.changeColor("black");
+        gift3.changeColor("black");
+        tree.changeColor("black");
+        star.changeColor("black");
+        hat.changeColor("black");
+        santa.changeColor("black");
+        ornament1.changeColor("white");
+        ornament2.changeColor("white");
+        ornament3.changeColor("white");
+        ornament4.changeColor("white");
+        ornament5.changeColor("white");
     }
 
     /**
@@ -76,9 +155,18 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
-        sun.changeColor("yellow");
+        trunk.changeColor("brown");
+        gift1.changeColor("red");
+        gift2.changeColor("yellow");
+        gift3.changeColor("blue");
+        tree.changeColor("green");
+        ornament1.changeColor("red");
+        ornament2.changeColor("yellow");
+        ornament3.changeColor("red");
+        ornament4.changeColor("blue");
+        ornament5.changeColor("blue");
+        star.changeColor("yellow");
+        santa.changeColor("black");
+        hat.changeColor("red");
     }
 }
